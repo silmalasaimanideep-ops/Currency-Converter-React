@@ -11,13 +11,29 @@ function InputBox({
   currencyDisable = false,
 }) {
   return (
-    <div className="bg-white p-3 rounded-lg text-sm flex justify-between">
-      <div className="flex flex-col">
-        <label className="text-black mb-1">{label}</label>
+    <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl flex justify-between items-center gap-4">
+      
+      <div className="flex flex-col w-full">
+        <label className="text-sm text-gray-600 mb-1 font-medium">
+          {label}
+        </label>
+
         <input
           type="number"
-          className="outline-none w-full bg-transparent py-1"
-          placeholder="Amount"
+          className="
+            w-full
+            bg-white
+            border border-blue-300
+            rounded-lg
+            px-3 py-2
+            text-gray-800
+            focus:outline-none
+            focus:ring-2
+            focus:ring-blue-500
+            focus:border-blue-500
+            transition
+          "
+          placeholder="Enter amount"
           disabled={amountDisable}
           value={amount}
           onChange={(e) =>
@@ -26,10 +42,24 @@ function InputBox({
         />
       </div>
 
-      <div className="flex flex-col">
-        <label className="text-black mb-1">Currency</label>
+      <div className="flex flex-col min-w-[90px\]">
+        <label className="text-sm text-gray-600 mb-1 font-medium">
+          Currency
+        </label>
+
         <select
-          className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
+          className="
+            bg-white
+            border border-blue-300
+            rounded-lg
+            px-2 py-2
+            text-gray-800
+            cursor-pointer
+            focus:outline-none
+            focus:ring-2
+            focus:ring-blue-500
+            transition
+          "
           value={selectCurrency}
           onChange={(e) =>
             onCurrencyChange && onCurrencyChange(e.target.value)
